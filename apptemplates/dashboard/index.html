@@ -42,7 +42,18 @@
 
                     <div id="employee-list" class="col col-xs-2">
                         <h3>TEAM MEMBERS</h3>
+                        
+                        <p>Search Member: <input id="member" /></p>
+
+                        <script>
+                            $(function() {
+                              $("#member").kendoAutoComplete({ dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ] });
+                            });
+                        </script>
+
+
                         <div id="employees-list"></div>
+                    
                     </div>
                     <div id="employee-details-wrapper" class="col col-xs-10">
                         <div id="employee-details" class="row">
@@ -66,6 +77,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             <div id="employeeStats" class="col-xs-12">
                                 <div id="team-sales" style="height:200px"></div>
                             </div>
