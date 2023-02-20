@@ -43,13 +43,16 @@
                     <div id="employee-list" class="col col-xs-2">
                         <h3>TEAM MEMBERS</h3>
                         
-                        <p>Search Member: <input id="member" /></p>
+                        <p>Search Member: <input id="member-auto-complete" /></p>
+
+
+                        <!-- <p>Animal: <input id="animal" /></p>
 
                         <script>
                             $(function() {
-                              $("#member").kendoAutoComplete({ dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ] });
+                              $("#animal").kendoAutoComplete({ dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ] });
                             });
-                        </script>
+                        </script> -->
 
 
                         <div id="employees-list"></div>
@@ -429,6 +432,19 @@
                   content: function(e){
                       return e.target.find("span").text();
                   }
+              })
+
+              $('#member-auto-complete').kendoAutoComplete({
+                dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ]
+                    // transport: {
+                    //         read: {
+                    //             url: './content/employees-list.json',
+                    //             crossDomain: true,
+                    //             dataType: "jsonp",
+                    //             jsonp: false,
+                    //             jsonpCallback: "callback_el"
+                    //         }
+                    //     },
               })
             }
 
