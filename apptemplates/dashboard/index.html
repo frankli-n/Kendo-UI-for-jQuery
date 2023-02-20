@@ -435,16 +435,18 @@
               })
 
               $('#member-auto-complete').kendoAutoComplete({
-                dataSource: [ "Ant", "Antilope", "Badger", "Beaver", "Bird" ]
-                    // transport: {
-                    //         read: {
-                    //             url: './content/employees-list.json',
-                    //             crossDomain: true,
-                    //             dataType: "jsonp",
-                    //             jsonp: false,
-                    //             jsonpCallback: "callback_el"
-                    //         }
-                    //     },
+                dataTextField: "EmployeeName",
+                dataSource: {
+                    transport: {
+                            read: {
+                                url: './content/employees-list.json',
+                                crossDomain: true,
+                                dataType: "jsonp",
+                                jsonp: false,
+                                jsonpCallback: "callback_el",
+                            }
+                        },
+                    }  
               })
             }
 
